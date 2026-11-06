@@ -1,0 +1,12 @@
+name: native-close-fixture
+on: pull_request
+permissions:
+  contents: read
+jobs:
+  fixture-fails:
+    name: fixture-fails
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Permanently fail to prevent any test merge
+        run: exit 1
